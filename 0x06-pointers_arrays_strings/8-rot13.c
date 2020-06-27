@@ -6,24 +6,44 @@
   */
 char *rot13(char *s)
 {
-int i;
+	int i, j;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-i = 0;
-while (s[i] != '\0')
-{
-	while ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			s[i] = s[i] - 13;
-		}
-		else
-		{
-			s[i] = s[i] + 13;
+			if (s[i] == a[j])
+			{
+			s[i] = b[j];
+			break;
+			}
 		}
 		i++;
 	}
-	i++;
-}
-return (s);
+	return (s);
+/*
+ *int i;
+ *
+ *i = 0;
+ *while (s[i] != '\0')
+ *{
+ *	while ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
+ *	{
+ *		if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
+ *		{
+ *			s[i] = s[i] - 13;
+ *		}
+ *		else
+ *		{
+ *			s[i] = s[i] + 13;
+ *		}
+ *		i++;
+ *	}
+ *	i++;
+ *}
+ *return (s);
+*/
 }
