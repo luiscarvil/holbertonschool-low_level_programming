@@ -3,7 +3,7 @@
  *_strspn - function that gets the length of a prefix substring.
  *@s: pointer inicial segment.
  *@accept: pointer n.
- *Return: Always 0.
+ *Return: cont.
  */
 unsigned int _strspn(char *s, char *accept)
 {
