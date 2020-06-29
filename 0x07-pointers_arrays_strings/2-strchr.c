@@ -3,7 +3,7 @@
  *_strchr - function that locates acharacter in a string.
  *@s: pointer string "hello"
  *@c: character to locates.
- *Return: null or s.
+ *Return: Always 0.
  */
 char *_strchr(char *s, char c)
 {
@@ -16,5 +16,5 @@ char *_strchr(char *s, char c)
 			return (s + i);
 		}
 	}
-			return ('\0');
+	return ('\0');
 }
