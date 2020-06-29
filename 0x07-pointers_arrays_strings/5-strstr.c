@@ -7,7 +7,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int j = 0, k = 0;
+	int j = 0, k = 0, i = 0;
 
 	while (haystack[k])
 	{
@@ -25,5 +25,17 @@ char *_strstr(char *haystack, char *needle)
 		}
 		k++;
 	}
+	while (needle[i])
+	{
+		i++;
+	}
+		if (needle[i] == '\0')
+		{
+			return ("");
+		}
+		else if (i == 0)
+		{
+			return (haystack);
+		}
 	return (0);
 }
