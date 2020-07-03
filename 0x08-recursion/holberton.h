@@ -10,4 +10,5 @@ int _sqrt_recursion(int n);
 int zoom(int n, int a);
 int is_prime_number(int n);
 int _number_prime(int n, int a);
+int is_palindrome(char *s);
 #endif
