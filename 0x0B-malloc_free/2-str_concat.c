@@ -24,12 +24,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		j++;
 	}
-	b = 1;
+	b = 0;
 	while (s2[b] != '\0')
 	{
 		b++;
 	}
-	conca = malloc((j + b) * sizeof(char));
+	conca = malloc(sizeof(char) * (j + b + 1));
 	if (conca == NULL)
 	{
 		return (NULL);
