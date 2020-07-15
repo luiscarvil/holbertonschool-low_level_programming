@@ -12,7 +12,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *new__dog;
 	int a, b, c;
 
-	a = b = 0;
+	a = 0, b = 0;
 	while (name[a] != '\0')
 	{
 		a++;
