@@ -2,6 +2,7 @@
 #define FUNCTIONS
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * struct op - Struct op
  *
