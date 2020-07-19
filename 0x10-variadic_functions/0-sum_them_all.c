@@ -2,7 +2,7 @@
 /**
  * sum_them_all - add arguments in function.
  * @n: num arguments unsigned int.
- * Return 0 or total.
+ * Return: 0 or total.
  */
 int sum_them_all(const unsigned int n, ...)
 {
