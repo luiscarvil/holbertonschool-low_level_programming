@@ -16,9 +16,9 @@ void print_all(const char *const format, ...)
 	{
 		space = "";
 		va_start(form, format);
-		while (format[i] != '\0')
+		while (*(format + i) != '\0')
 		{
-			switch (format[i])
+			switch (*(format + i))
 			{
 			case 'c':
 				printf("%s", space);
