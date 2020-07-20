@@ -9,12 +9,11 @@
 void print_all(const char *const format, ...)
 {
 	char *space;
-	unsigned int i;
+	unsigned int i = 0;
 	va_list lista;
 
 	if (format != NULL)
 	{
-		i = 0;
 		space = "";
 		va_start(lista, format);
 		while (*(format + i) != '\0')
@@ -42,10 +41,10 @@ void print_all(const char *const format, ...)
 				else
 				{
 					printf("%s", space);
-					space = ", ";
-					printf("%s", va_arg(lista, char *));
-					break;				}
+					space = ", ";				}
+				printf("%s", va_arg(lista, char *));
+				break;
 			}			i++;
-		}
-	}	printf("\n");
+		}	}	printf("\n");
+	va_end(lista);
 }
