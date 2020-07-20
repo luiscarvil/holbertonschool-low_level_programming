@@ -39,14 +39,13 @@ void print_all(const char *const format, ...)
 			case 's':
 				if (space == NULL)
 					printf("(nil)");
-				printf("%s", space);
-				space = ", ";
-				printf("%s", va_arg(lista, char *));
-				break;
-			}
-			i++;
+				else
+				{
+					printf("%s", space);
+					space = ", ";
+					printf("%s", va_arg(lista, char *));
+					break;				}
+			}			i++;
 		}
-	}
-	printf("\n");
-	va_end(lista);
+	}	printf("\n");
 }
