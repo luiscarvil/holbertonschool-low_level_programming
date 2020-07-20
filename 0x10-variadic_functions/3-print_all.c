@@ -8,14 +8,15 @@
  */
 void print_all(const char *const format, ...)
 {
-	va_list form;
-	int i = 0;
 	char *space;
+	unsigned int i;
+	va_list lista;
 
 	if (format != NULL)
 	{
+		i = 0;
 		space = "";
-		va_start(form, format);
+		va_start(lista, format);
 		while (*(format + i) != '\0')
 		{
 			switch (*(format + i))
@@ -23,25 +24,24 @@ void print_all(const char *const format, ...)
 			case 'c':
 				printf("%s", space);
 				space = ", ";
-				printf("%c", va_arg(form, int));
+				printf("%c", va_arg(lista, int));
 				break;
 			case 'i':
 				printf("%s", space);
 				space = ", ";
-				printf("%d", va_arg(form, int));
+				printf("%d", va_arg(lista, int));
 				break;
 			case 'f':
 				printf("%s", space);
 				space = ", ";
-				printf("%f", va_arg(form, double));
+				printf("%f", va_arg(lista, double));
 				break;
 			case 's':
 				if (space == NULL)
 					printf("(nil)");
-				else
-					printf("%s", space);
+				printf("%s", space);
 				space = ", ";
-				printf("%s", va_arg(form, char *));
+				printf("%s", va_arg(lista, char *));
 				break;
 			}
 			i++;
