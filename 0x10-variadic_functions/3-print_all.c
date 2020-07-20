@@ -7,40 +7,41 @@
 void print_all(const char *const format, ...)
 {
 	va_list form;
-	char *stg;
-	int i;
+	int i = 0;
 	char *space;
 
-	va_start(form, format);
-	for  (i = 0; format[i] != '\0'; i++)
+	if (format != NULL)
 	{
 		space = "";
-		if (format[i + 1])
+		va_start(form, format);
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			space = ", ";
-		}
-
-		switch (format[i])
-		{
-		case 'c':
-			printf("%c%s", (char)va_arg(form, int), space);
-
-			break;
-		case 'i':
-			    printf("%i%s", va_arg(form, int), space);
-			break;
-		case 'f':
-			printf("%f%s", va_arg(form, double), space);
-			break;
-		case 's':
-			stg = va_arg(form, char *);
-			if (stg == NULL)
+			switch (format[i])
 			{
-				printf("(nil)");
+			case 'c':
+				printf("%s", space);
+				space = ", ";
+				printf("%c", va_arg(form, int));
+				break;
+			case 'i':
+				printf("%s", space);
+				space = ", ";
+				printf("%d", va_arg(form, int));
+				break;
+			case 'f':
+				printf("%s", space);
+				space = ", ";
+				printf("%f", va_arg(form, double));
+				break;
+			case 's':
+				if (space == NULL)
+					printf("(nil)");
+				else
+					printf("%s", space);
+				space = ", ";
+				printf("%s", va_arg(form, char *));
 				break;
 			}
-			printf("%s%s", stg, space);
-			break;
 		}
 	}
 	printf("\n");
