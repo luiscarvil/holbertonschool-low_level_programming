@@ -43,9 +43,9 @@ void print_all(const char *const format, ...)
 				space = ", ";
 				printf("%s", va_arg(form, char *));
 				break;
-			}			i++;
+			}
+			i++;
 		}
 	}
 	printf("\n");
-	va_end(form);
 }
