@@ -14,7 +14,7 @@ void print_all(const char *const format, ...)
 	{
 		space = "";
 		va_start(form, format);
-		for (i = 0; format[i] != '\0'; i++)
+		while (format[i] != '\0')
 		{
 			switch (format[i])
 			{
@@ -41,7 +41,7 @@ void print_all(const char *const format, ...)
 				space = ", ";
 				printf("%s", va_arg(form, char *));
 				break;
-			}
+			}			i++;
 		}
 	}
 	printf("\n");
