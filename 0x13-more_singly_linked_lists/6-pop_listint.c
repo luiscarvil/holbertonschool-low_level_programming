@@ -13,6 +13,7 @@ if (head == NULL || *head == NULL)
 return (0);
 }
 lista = *head;
+*head = lista->next;
 temp = lista->n;
 free(lista);
 return (temp);
