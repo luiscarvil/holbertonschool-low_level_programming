@@ -2,7 +2,7 @@
 /**
  * sum_listint - sum all the data(n) of a listint_t linked list.
  * @head: pointer struc.
- * Return total (data(n)).
+ * Return: total (data(n)).
  */
 int sum_listint(listint_t *head)
 {
