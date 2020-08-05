@@ -1,4 +1,10 @@
 #include "holberton.h"
+/**
+ * read_textfile - read and write files
+ * @filename: file name pointer.
+ * @letters: max letter id.
+ * Return: readd or 0 null and error.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = 0,
@@ -6,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	    writee = 0;
 	char *buff;
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0)
 	{
 		return (0);
 	}
@@ -16,17 +22,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buff = malloc(letters * sizeof(char));
-	if (!buff)
+	if (buff == NULL)
 	{
 		return (0);
 	}
 	readd = read(fd, buff, letters);
+	if (readd == -1)
+	{
+		return (0);
+	}
 	writee = write(STDOUT_FILENO, buff, letters);
 	if (writee == -1)
 	{
 		return (0);
 	}
-	free(buff);	
+	free(buff);
 	close(fd);
 	return (readd);
 }
