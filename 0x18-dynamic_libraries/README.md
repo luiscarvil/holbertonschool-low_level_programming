@@ -1,1 +1,0 @@
-"dinamics libraries"
